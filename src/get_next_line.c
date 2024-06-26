@@ -14,7 +14,7 @@ char	*ft_new_storage(char *storage)
 		free(storage);
 		return (NULL);
 	}
-	new_storage = malloc(sizeof(char) * (gnl_strlen(storage) - i + 1));
+	new_storage = malloc(sizeof(char) * (gnlen(storage) - i + 1));
 	if (!new_storage)
 		return (NULL);
 	i++;
@@ -87,7 +87,7 @@ char	*get_next_line(int fd, t_map *map)
 	if (!storage)
 		ft_error(map, 2);
 	line = ft_create_line(storage, map);
-	if (!ft_check_line(line))
+	if (!ft_check_line(line, map))
 	{
 		free(line);
 		free(storage);

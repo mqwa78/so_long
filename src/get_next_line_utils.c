@@ -1,7 +1,7 @@
 
 #include "../includes/so_long.h"
 
-size_t	gnl_strlen(const char *str)
+size_t	gnlen(const char *str)
 {
 	size_t	i;
 
@@ -16,7 +16,7 @@ size_t	gnl_strlen(const char *str)
 size_t	ft_count_char(const char *str)
 {
 	size_t	count;
-	
+
 	if (!str)
 		return (0);
 	count = 0;
@@ -29,7 +29,7 @@ size_t	ft_count_char(const char *str)
 	return (count);
 }
 
-BOOL	ft_check_endline(const char *str)
+t_bool	ft_check_endline(const char *str)
 {	
 	if (!str)
 		return (0);
@@ -55,7 +55,7 @@ char	*gnl_strjoin(char *storage, char *buffer)
 	}
 	if (!storage || !buffer)
 		return (NULL);
-	new_storage = malloc(sizeof(char) * (gnl_strlen(storage) + gnl_strlen(buffer) + 1));
+	new_storage = malloc(sizeof(char) * (gnlen(storage) + gnlen(buffer) + 1));
 	if (!new_storage)
 		return (NULL);
 	i = -1;
@@ -64,7 +64,7 @@ char	*gnl_strjoin(char *storage, char *buffer)
 	j = 0;
 	while (buffer[j])
 		new_storage[i++] = buffer[j++];
-	new_storage[gnl_strlen(storage) + gnl_strlen(buffer)] = '\0';
+	new_storage[gnlen(storage) + gnlen(buffer)] = '\0';
 	free(storage);
 	return (new_storage);
 }

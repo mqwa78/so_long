@@ -15,7 +15,7 @@ int	ft_check_char(char c, char *str)
 	return (0);
 }
 
-int	ft_check_line(char *line)
+int	ft_check_line(char *line, t_map *map)
 {	
 	int		i;
 
@@ -24,8 +24,18 @@ int	ft_check_line(char *line)
 		return (1);
 	while (line[i] && line[i] != '\n')
 	{
-		if (!ft_check_char(line[i], "12"))
+		if (!ft_check_char(line[i], "01CPE"))
 			return (0);
+		if (line[i] == 'C')
+			map->con++;
+		else if (line[i] == 'P')
+		{
+			map->start++;
+			map->player_x = i;
+			map->player_y = map->height;
+		}
+		else if (line[i] == 'E')
+			map->end++;
 		i++;
 	}
 	return (1);

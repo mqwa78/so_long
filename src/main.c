@@ -13,8 +13,7 @@ int	main(int ac, char **av)
 			ft_error(&map, 0);
 		ft_create_map((av[1]), &map);
 		//if (!ft_check_map(map))
-			//ft_error;
-		//ft_free_var(&map);
+			//ft_error(&map, 5);
 		//so_long(&map);
 	size = 0;
 	while (size < map.height)
