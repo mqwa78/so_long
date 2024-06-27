@@ -1,19 +1,22 @@
 
 #include "../includes/so_long.h"
 
-void	ft_free_var(t_map *map)
+void	ft_free_map(t_map *map, int size)
 {
+	while (size >= 0)
+	{
+		free(map->map[size]);
+		size--;
+	}
+	free(map->map);
+}
+
+void	ft_free_var(t_map *map)
+{	
 	if (map->line)
 		free(map->line);
 	if (map->buf)
 		free(map->buf);
-}
-
-void	ft_free_map(t_map *map, int size)
-{
-	while (size--)
-		free(map->map[size]);
-	free(map->map);
 }
 
 void	ft_error(t_map *map, int flag)

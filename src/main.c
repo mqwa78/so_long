@@ -12,8 +12,12 @@ int	main(int ac, char **av)
 		if (!ft_check_arg(av[1]))
 			ft_error(&map, 0);
 		ft_create_map((av[1]), &map);
-		//if (!ft_check_map(map))
-			//ft_error(&map, 5);
+		if (!ft_check_map(&map))
+		{
+			ft_free_map(&map, map.height);
+			write(2, "invalid map\n", 12);
+			return (1);
+		}
 		//so_long(&map);
 	size = 0;
 	while (size < map.height)

@@ -14,4 +14,5 @@ void	ft_init_var(t_map *map)
 	map->buf = NULL;
 	map->line = NULL;
 	map->map = NULL;
+	map->cpy = NULL;
 }

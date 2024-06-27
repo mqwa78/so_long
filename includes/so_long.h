@@ -32,7 +32,7 @@ typedef struct map_s
 	char		*line;
 	char		*buf;
 	char		**map;
-	char		**cpymap;
+	char		**cpy;
 }						t_map;
 
 /*          MAP              */
@@ -46,6 +46,9 @@ void	ft_create_map(char *file, t_map *map);
 void	ft_free_map(t_map *map, int size);
 int		ft_check_line(char *line, t_map *map);
 int		ft_check_char(char c, char *str);
+int		ft_check_map(t_map *map);
+int		ft_up_down(t_map *map);
+int		ft_left_right(t_map *map);
 
 /*          GNL             */
 
