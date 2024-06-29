@@ -4,6 +4,7 @@ SRC	+=	./src/error_free.c
 SRC	+=	./src/init_var.c
 SRC	+=	./src/create_map.c
 SRC	+=	./src/check_map.c
+SRC	+=	./src/floodfill.c
 SRC	+=	./src/get_next_line.c
 SRC	+=	./src/get_next_line_utils.c
 

@@ -44,11 +44,16 @@ void	ft_free_var(t_map *map);
 void	ft_init_var(t_map *map);
 void	ft_create_map(char *file, t_map *map);
 void	ft_free_map(t_map *map, int size);
+void	ft_free_cpy(t_map *map, int size);
 int		ft_check_line(char *line, t_map *map);
 int		ft_check_char(char c, char *str);
 int		ft_check_map(t_map *map);
 int		ft_up_down(t_map *map);
 int		ft_left_right(t_map *map);
+int		ft_floodfill(t_map *map);
+char	**ft_map_cpy(t_map map);
+int		ft_flood(t_map *map, int x, int y);
+int		ft_check_var(t_map *map);
 
 /*          GNL             */
 

@@ -1,6 +1,8 @@
 
 #include "../includes/so_long.h"
 
+//size > 0 plutot que size >= 0
+
 void	ft_free_map(t_map *map, int size)
 {
 	while (size >= 0)
@@ -9,6 +11,17 @@ void	ft_free_map(t_map *map, int size)
 		size--;
 	}
 	free(map->map);
+}
+
+void	ft_free_cpy(t_map *map, int size)
+{	
+	size--;
+	while (size >= 0)
+	{
+		free(map->cpy[size]);
+		size--;
+	}
+	free(map->cpy);
 }
 
 void	ft_free_var(t_map *map)

@@ -59,5 +59,7 @@ int	ft_check_map(t_map *map)
 	}
 	if (!ft_up_down(map) || !ft_left_right(map))
 		return (0);
+	if (!ft_floodfill(map))
+		return (0);
 	return (1);
 }
