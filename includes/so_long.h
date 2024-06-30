@@ -15,6 +15,12 @@ typedef int	t_bool;
 #  define BUFFER_SIZE 100
 # endif
 
+# define W 119
+# define A 97
+# define S 115
+# define D 100
+# define ESC 65307
+
 typedef struct map_s
 {
 	int			fd;
@@ -34,6 +40,17 @@ typedef struct map_s
 	char		**map;
 	char		**cpy;
 }						t_map;
+
+typedef struct game_s
+{
+	void		*mlxptr;
+	void		*winptr;
+	void		*wall;
+	void		*floor;
+	void		*conso;
+	void		*exit;
+	void		*player;
+}						t_game;
 
 /*          MAP              */
 
