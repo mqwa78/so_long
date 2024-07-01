@@ -21,6 +21,15 @@ typedef int	t_bool;
 # define D 100
 # define ESC 65307
 
+typedef struct s_img
+{
+	void	*wall;
+	void	*floor;
+	void	*conso;
+	void	*exit;
+	void	*player;
+}						t_img;
+
 typedef struct map_s
 {
 	int			fd;
@@ -39,18 +48,10 @@ typedef struct map_s
 	char		*buf;
 	char		**map;
 	char		**cpy;
-}						t_map;
-
-typedef struct game_s
-{
 	void		*mlxptr;
 	void		*winptr;
-	void		*wall;
-	void		*floor;
-	void		*conso;
-	void		*exit;
-	void		*player;
-}						t_game;
+	t_img		img;
+}						t_map;
 
 /*          MAP              */
 
@@ -82,4 +83,12 @@ char	*gnl_strjoin(char *storage, char *buffer);
 char	*ft_create_line(char *str, t_map *map);
 char	*ft_fill_storage(char *storage, int fd);
 char	*ft_new_storage(char *storage);
+
+/*          SO_LONG          */
+
+void	so_long(t_map *game);
+void	ft_setup_img(t_map *game, int x, int y);
+void	ft_init_img(t_map *game);
+void	free_img(t_map *game);
+int		ft_close_game(t_map *game);
 #endif
