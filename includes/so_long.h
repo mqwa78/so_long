@@ -3,6 +3,7 @@
 # define SO_LONG_H
 
 # include "../libft/libft.h"
+# include "../minilibx/mlx.h"
 # include <stdlib.h>
 # include <string.h>
 # include <fcntl.h>
